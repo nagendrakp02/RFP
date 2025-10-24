@@ -1,18 +1,6 @@
-# streamlit
-# pdfplumber
-# beautifulsoup4
-# langchain
-# langchain_groq
-# python-dotenv
-
 streamlit
-beautifulsoup4
 pdfplumber
-pydantic
-typer
-dateparser
-lxml
-pandas
-rapidfuzz
-groq
+langchain
+langchain_groq
 python-dotenv
+

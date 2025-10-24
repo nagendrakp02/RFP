@@ -1,51 +1,6 @@
-# import streamlit as st
-# from src.graphs.graph_builder import GraphBuilder
-# from src.llms.groqllm import GroqLLM
-# from dotenv import load_dotenv
-# import os
-# import tempfile
-# import json
-
-# # Load environment variables
-# load_dotenv()
-# groq_api_key = os.getenv("GROQ_API_KEY")
-
-# st.set_page_config(page_title="RFP Structured Data Extractor", layout="centered")
-# st.title("📄 RFP Structured Data Extractor")
-
-# uploaded_file = st.file_uploader(
-#     "Upload RFP PDF or HTML file", type=["pdf", "html", "htm"], key="rfp_file_uploader"
-# )
-
-# if uploaded_file:
-#     with tempfile.NamedTemporaryFile(delete=False, suffix='.' + uploaded_file.name.split('.')[-1]) as tmp_file:
-#         tmp_file.write(uploaded_file.read())
-#         tmp_file_path = tmp_file.name
-
-#     if st.button("Extract Structured Data"):
-#         try:
-#             llm = GroqLLM(groq_api_key).get_llm()
-#             graph_builder = GraphBuilder(llm)
-#             graph = graph_builder.setup_graph()
-#             state = graph.invoke({"file_path": tmp_file_path})
-#             rfp_data = state.get("rfp_data")
-#             pretty_json = json.dumps(rfp_data, indent=2) if rfp_data else "{}"
-#             st.success("✅ Structured data extracted!")
-#             st.code(pretty_json, language="json")
-#             st.download_button(
-#                 "Download JSON",
-#                 pretty_json,
-#                 file_name="rfp_structured_data.json",
-#                 mime="application/json"
-#             )
-#         except Exception as e:
-#             st.error(f"❌ Error: {e}")
-
-
 import streamlit as st
 from src.graphs.graph_builder import GraphBuilder
 from src.llms.groqllm import GroqLLM
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import os
 import tempfile
