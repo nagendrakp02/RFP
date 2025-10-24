@@ -8,6 +8,7 @@ class GroqLLM:
 
     def get_llm(self):
         try:
-            return ChatGroq(api_key=self.groq_api_key, model="llama-3.3-70b-versatile")
+            # return ChatGroq(api_key=self.groq_api_key, model="llama-3.3-70b-versatile")
+            return ChatGroq(api_key=self.groq_api_key, model="openai/gpt-oss-20b")
         except Exception as e:
             raise ValueError(f"Error occurred while initializing ChatGroq: {e}")
