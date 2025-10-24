@@ -3,4 +3,5 @@ pdfplumber
 langchain
 langchain_groq
 python-dotenv
+beautifulsoup4
 
