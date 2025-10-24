@@ -45,6 +45,7 @@
 import streamlit as st
 from src.graphs.graph_builder import GraphBuilder
 from src.llms.groqllm import GroqLLM
+from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import os
 import tempfile
