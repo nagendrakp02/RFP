@@ -1,0 +1,7 @@
+streamlit
+pdfplumber
+beautifulsoup4
+langchain
+langchain_groq
+python-dotenv
+
