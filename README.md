@@ -167,12 +167,9 @@ beautifulsoup4
 - ✅ Live demo deployment on Streamlit Cloud
 - ✅ Sample output files in repository
 
-```
-
 
 ## Author
 Developed by Nagendra KP
 
----
 
 
