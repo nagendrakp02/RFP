@@ -103,7 +103,7 @@ streamlit run app.py
 7. Download results individually or as a combined JSON file
 
 ```
-
+```
 ## Extracted Fields
 The system extracts the following 20 fields from RFP documents:
 
@@ -156,6 +156,7 @@ langchain
 langchain_groq
 python-dotenv
 beautifulsoup4
+```
 ```
 **Assignment Submission Checklist:**
 - ✅ Python script/application that extracts structured data
