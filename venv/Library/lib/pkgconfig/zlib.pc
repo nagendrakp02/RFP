@@ -1,8 +1,8 @@
-prefix=D:/Blog-Generation/venv/Library
-exec_prefix=D:/Blog-Generation/venv/Library
-libdir=D:/Blog-Generation/venv/Library/lib
-sharedlibdir=D:/Blog-Generation/venv/Library/lib
-includedir=D:/Blog-Generation/venv/Library/include
+prefix=D:/RFP/venv/Library
+exec_prefix=D:/RFP/venv/Library
+libdir=D:/RFP/venv/Library/lib
+sharedlibdir=D:/RFP/venv/Library/lib
+includedir=D:/RFP/venv/Library/include
 
 Name: zlib
 Description: zlib compression library

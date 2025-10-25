@@ -1,10 +1,12 @@
 from langchain_groq import ChatGroq
 
+
 class GroqLLM:
     def __init__(self, api_key: str):
         if not api_key:
             raise ValueError("Groq API Key is required")
         self.groq_api_key = api_key
+
 
     def get_llm(self):
         try:
