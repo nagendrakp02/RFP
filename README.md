@@ -67,11 +67,8 @@ cd RFP
 python -m venv venv
 
 # Activate virtual environment
-# On Windows:
 venv\Scripts\activate
 
-# On macOS/Linux:
-source venv/bin/activate
 ```
 
 ### 3. Install Dependencies
@@ -85,12 +82,6 @@ Create a `.env` file in the project root:
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
-**To get a Groq API key:**
-1. Visit [console.groq.com](https://console.groq.com/)
-2. Sign up for a free account
-3. Navigate to API Keys section
-4. Create a new API key
-5. Copy and paste it into your `.env` file
 
 ## Usage
 
@@ -111,9 +102,6 @@ streamlit run app.py
 6. View individual extracted JSON data for each file
 7. Download results individually or as a combined JSON file
 
-### Command Line Interface
-```bash
-python main.py
 ```
 
 ## Extracted Fields
@@ -162,142 +150,12 @@ The system extracts the following 20 fields from RFP documents:
 
 ## Dependencies
 ```
-streamlit>=1.28.0
-langchain-groq==0.1.9
-langchain-core==0.2.0
-langgraph==0.1.0
-pdfplumber>=0.7.0
-beautifulsoup4>=4.12.0
-python-dotenv>=1.0.0
-pydantic>=2.0.0
-lxml>=4.9.0
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**1. Module Import Errors**
-```bash
-# Ensure virtual environment is activated
-source venv/bin/activate  # macOS/Linux
-# or
-venv\Scripts\activate     # Windows
-
-# Reinstall dependencies with correct versions
-pip install langchain-core==0.2.0 langchain-groq==0.1.9 langgraph==0.1.0
-```
-
-**2. Groq API Key Issues**
-- Verify your `.env` file contains the correct API key
-- Check that the key is active at [console.groq.com](https://console.groq.com/)
-- Ensure no extra spaces or quotes around the key
-- For Streamlit Cloud deployment, add the key in Secrets management
-
-**3. File Upload Issues**
-- Supported formats: PDF, HTML, HTM
-- Check file permissions and size limits
-- Ensure files are not corrupted
-
-**4. Streamlit Not Starting**
-```bash
-# Try specifying port explicitly
-streamlit run app.py --server.port 8501
-```
-
-**5. Dependency Version Conflicts**
-```bash
-# Uninstall conflicting packages
-pip uninstall langchain-groq langchain-core langgraph -y
-
-# Install specific compatible versions
-pip install langchain-core==0.2.0 langchain-groq==0.1.9 langgraph==0.1.0
-```
-
-## Output Format
-The extracted data is returned in JSON format:
-
-### Individual File Output
-```json
-{
-  "Bid Number": "RFP-2024-001",
-  "Title": "Software Development Services",
-  "Due Date": "2024-12-31",
-  "Bid Submission Type": "Electronic",
-  "Term of Bid": "30 days",
-  "Pre Bid Meeting": "2024-11-15 at 10:00 AM",
-  "Installation": "On-site installation required",
-  "Bid Bond Requirement": "5% of bid amount",
-  // ... other 12 fields
-}
-```
-
-### Combined Output (Multiple Files)
-```json
-[
-  {
-    "filename": "rfp_document1.pdf",
-    "data": {
-      "Bid Number": "RFP-2024-001",
-      "Title": "Software Development Services",
-      // ... all 20 fields
-    }
-  },
-  {
-    "filename": "rfp_document2.html",
-    "data": {
-      "Bid Number": "RFP-2024-002",
-      "Title": "Hardware Procurement",
-      // ... all 20 fields
-    }
-  }
-]
-```
-
-## Performance Notes
-- Processing time depends on document size and complexity
-- Each file is processed individually for accurate extraction
-- Groq free tier has rate limits; consider upgrading for high-volume usage
-- Large documents are automatically truncated to 8000 characters for LLM processing
-- Multi-file processing shows progress for each file separately
-
-## Repository
-- **GitHub Repository**: [https://github.com/nagendrakp02/RFP](https://github.com/nagendrakp02/RFP)
-- **Sample Outputs**: [https://github.com/nagendrakp02/RFP/tree/main/output](https://github.com/nagendrakp02/RFP/tree/main/output)
-
-## Contributing
-1. Fork the repository
-2. Follow the existing code structure
-3. Add proper error handling
-4. Include docstrings for new functions
-5. Test with various RFP document formats
-6. Submit a pull request
-
-## License
-This project is developed for educational and assignment purposes.
-
-## Support
-For technical issues:
-1. Check the troubleshooting section above
-2. Verify all dependencies are correctly installed with compatible versions
-3. Ensure your Groq API key is valid and properly configured
-4. Review the console output for specific error messages
-5. Check sample outputs at [https://github.com/nagendrakp02/RFP/tree/main/output](https://github.com/nagendrakp02/RFP/tree/main/output)
-
-## Author
-Developed by Nagendra KP
-
----
-
-## Quick Start Guide
-
-1. **Try it online**: Visit [https://nagendrakp02-rfp-app-j7lhb0.streamlit.app/](https://nagendrakp02-rfp-app-j7lhb0.streamlit.app/)
-2. **Upload your RFP documents** (PDF or HTML)
-3. **Click Extract** to process all files
-4. **View and download** the structured JSON data
-5. **Check sample outputs** at [output folder](https://github.com/nagendrakp02/RFP/tree/main/output)
-
----
+streamlit
+pdfplumber
+langchain
+langchain_groq
+python-dotenv
+beautifulsoup4
 
 **Assignment Submission Checklist:**
 - ✅ Python script/application that extracts structured data
@@ -308,3 +166,13 @@ Developed by Nagendra KP
 - ✅ Clean, documented code structure
 - ✅ Live demo deployment on Streamlit Cloud
 - ✅ Sample output files in repository
+
+```
+
+
+## Author
+Developed by Nagendra KP
+
+---
+
+
