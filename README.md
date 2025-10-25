@@ -149,14 +149,14 @@ The system extracts the following 20 fields from RFP documents:
 7. **Results Display**: Shows extraction results for each file with expandable sections
 
 ## Dependencies
-```
+
 streamlit
 pdfplumber
 langchain
 langchain_groq
 python-dotenv
 beautifulsoup4
-
+```
 **Assignment Submission Checklist:**
 - ✅ Python script/application that extracts structured data
 - ✅ README file with setup and usage instructions
