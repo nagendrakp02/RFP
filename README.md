@@ -51,9 +51,7 @@ RFP/
 ```bash
 # If using git
 git clone <repository-url>
-cd RFP
 
-# If downloaded as zip, extract and navigate to the folder
 ```
 
 ### 2. Create Virtual Environment
@@ -64,8 +62,6 @@ python -m venv venv
 # On Windows:
 venv\Scripts\activate
 
-# On macOS/Linux:
-source venv/bin/activate
 ```
 
 ### 3. Install Dependencies
@@ -79,12 +75,7 @@ Create a `.env` file in the project root:
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
-**To get a Groq API key:**
-1. Visit [console.groq.com](https://console.groq.com/)
-2. Sign up for a free account
-3. Navigate to API Keys section
-4. Create a new API key
-5. Copy and paste it into your `.env` file
+
 
 ## Usage
 
@@ -99,10 +90,6 @@ streamlit run app.py
 5. Click "Extract Structured Data from All Files"
 6. View the extracted JSON data and download the results
 
-### Command Line Interface
-```bash
-python main.py
-```
 
 ## Extracted Fields
 The system extracts the following 20 fields from RFP documents:
@@ -147,45 +134,14 @@ The system extracts the following 20 fields from RFP documents:
 
 ## Dependencies
 ```
-streamlit>=1.28.0
-langchain-groq>=0.1.0
-langchain-core>=0.1.0
-langgraph>=0.0.40
-pdfplumber>=0.7.0
-beautifulsoup4>=4.12.0
-python-dotenv>=1.0.0
-pydantic>=1.10.0
-```
+streamlit
+pdfplumber
+langchain
+langchain_groq
+python-dotenv
+beautifulsoup4
 
-## Troubleshooting
 
-### Common Issues
-
-**1. Module Import Errors**
-```bash
-# Ensure virtual environment is activated
-source venv/bin/activate  # macOS/Linux
-# or
-venv\Scripts\activate     # Windows
-
-# Reinstall dependencies
-pip install -r requirements.txt
-```
-
-**2. Groq API Key Issues**
-- Verify your `.env` file contains the correct API key
-- Check that the key is active at [console.groq.com](https://console.groq.com/)
-- Ensure no extra spaces or quotes around the key
-
-**3. File Upload Issues**
-- Supported formats: PDF, HTML, HTM
-- Check file permissions and size limits
-- Ensure files are not corrupted
-
-**4. Streamlit Not Starting**
-```bash
-# Try specifying port explicitly
-streamlit run app.py --server.port 8501
 ```
 
 ## Output Format
@@ -201,26 +157,6 @@ The extracted data is returned in JSON format:
 }
 ```
 
-## Performance Notes
-- Processing time depends on document size and complexity
-- Groq free tier has rate limits; consider upgrading for high-volume usage
-- Large documents are automatically truncated to 8000 characters for LLM processing
-
-## Contributing
-1. Follow the existing code structure
-2. Add proper error handling
-3. Include docstrings for new functions
-4. Test with various RFP document formats
-
-## License
-This project is developed for educational and assignment purposes.
-
-## Support
-For technical issues:
-1. Check the troubleshooting section above
-2. Verify all dependencies are correctly installed
-3. Ensure your Groq API key is valid and properly configured
-4. Review the console output for specific error messages
 
 ---
 
