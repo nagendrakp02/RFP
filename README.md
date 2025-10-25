@@ -102,8 +102,7 @@ streamlit run app.py
 6. View individual extracted JSON data for each file
 7. Download results individually or as a combined JSON file
 
-```
-```
+
 ## Extracted Fields
 The system extracts the following 20 fields from RFP documents:
 
@@ -149,15 +148,13 @@ The system extracts the following 20 fields from RFP documents:
 7. **Results Display**: Shows extraction results for each file with expandable sections
 
 ## Dependencies
-
 streamlit
 pdfplumber
 langchain
 langchain_groq
 python-dotenv
 beautifulsoup4
-```
-```
+
 **Assignment Submission Checklist:**
 - ✅ Python script/application that extracts structured data
 - ✅ README file with setup and usage instructions
